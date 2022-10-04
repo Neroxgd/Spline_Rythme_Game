@@ -161,8 +161,12 @@ public class SplineBest : MonoBehaviour
             Vector3 point = computePoint((float)i / _nbPointsToComputeLength);
             length += (lastPoint - point).magnitude;
             _lengths[i - 1] = length;
-            if(_placeCircles.ifruntime())
+            /*if(_placeCircles.ifruntime())
+            {
                 _placeCircles.GenerateTorus(i, point, lastPoint);
+                Debug.Log("abcde");
+            }*/
+                
             lastPoint = point;
         }
         // if (_placeCircles.listobj())
