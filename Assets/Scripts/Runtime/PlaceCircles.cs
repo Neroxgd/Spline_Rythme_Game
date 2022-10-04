@@ -52,7 +52,7 @@ public class PlaceCircles : MonoBehaviour
     {
         return List_Torus != null;
     }*/
-    void Start()
+  /*  void Start()
     {
         // runtime = true;
         // _splinebest.computeLengths();
@@ -70,6 +70,28 @@ public class PlaceCircles : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(_splinebest.transform.TransformDirection(orientation.forward), _splinebest.transform.TransformDirection(orientation.upward));
             GameObject _torus = Instantiate(Torus, position, rotation, this.transform);
         }
+    }
+    */
+    public void PlaceCircleOnScene()
+    {
+          // runtime = true;
+        // _splinebest.computeLengths();
+        if (_splinebest == null)
+            return;
+
+        if (Torus == null)
+            return;
+
+        for (float distance = 0; distance < _splinebest.length(); distance += _distanceBetweenObject)
+        {
+            Vector3 position = _splinebest.transform.TransformPoint(_splinebest.computePointWithLength(distance));
+            Orientation orientation = _splinebest.computeOrientationWithLenght(distance, Vector3.up);
+
+            Quaternion rotation = Quaternion.LookRotation(_splinebest.transform.TransformDirection(orientation.forward), _splinebest.transform.TransformDirection(orientation.upward));
+            GameObject _torus = Instantiate(Torus, position, rotation, this.transform);
+        }
+
+
     }
 
     // Update is called once per frame
