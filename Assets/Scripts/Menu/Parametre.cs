@@ -10,6 +10,7 @@ public class Parametre : MonoBehaviour
     [SerializeField] private AudioSource _audiosource;
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI txtVolume;
+    [SerializeField] private MainMenu _mainmenu;
 
     public void Set_Resolution()
     {
@@ -30,6 +31,13 @@ public class Parametre : MonoBehaviour
         txtVolume.text = "Volume " + (_audiosource.volume*100).ToString("00") + "%";
     }
 
+    public void RetourToMenu()
+    {
+        _mainmenu.visibleMainMenu = !_mainmenu.visibleMainMenu;
+        _mainmenu.visibleParametre = !_mainmenu.visibleParametre;
+        _mainmenu._canvasMainMenu.SetActive(true);
+        _mainmenu._canvasParametre.SetActive(false);
+    }
     void Start()
     {
 

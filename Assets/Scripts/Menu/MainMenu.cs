@@ -5,10 +5,10 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] private GameObject _canvasMainMenu;
-    [SerializeField] private GameObject _canvasParametre;
-    private bool visibleMainMenu = true;
-    private bool visibleParametre = false;
+    public GameObject _canvasMainMenu;
+    public GameObject _canvasParametre;
+    public bool visibleMainMenu = true;
+    public bool visibleParametre = false;
 
     void Start()
     {
@@ -20,8 +20,8 @@ public class MainMenu : MonoBehaviour
     {
         visibleMainMenu = !visibleMainMenu;
         visibleParametre = !visibleParametre;
-        _canvasMainMenu.SetActive(false);
         _canvasParametre.SetActive(true);
+        _canvasMainMenu.SetActive(false);
     }
 
     public void Quitter()
