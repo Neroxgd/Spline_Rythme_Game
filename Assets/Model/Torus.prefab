@@ -11734,5 +11734,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04089558e3f7ebb49abe7941b4d7707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Updiff: {x: 0, y: 2.28, z: 0}
-  Downdiff: {x: 0, y: 2, z: 0}
+  Upfactor: {x: 0, y: 3.02, z: 0}
