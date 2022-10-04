@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Parametre : MonoBehaviour
 {
     [SerializeField] private Dropdown _resolution;
+    [SerializeField] private AudioSource _audiosource;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private TextMeshProUGUI txtVolume;
 
     public void Set_Resolution()
     {
@@ -19,6 +23,13 @@ public class Parametre : MonoBehaviour
                 break;
         }
     }
+
+    public void VolumeChange()
+    {
+        _audiosource.volume = _slider.value;
+        txtVolume.text = "Volume " + (_audiosource.volume*100).ToString("00") + "%";
+    }
+
     void Start()
     {
 
