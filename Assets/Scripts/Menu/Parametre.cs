@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class Parametre : MonoBehaviour
+{
+    [SerializeField] private Dropdown _resolution;
+    [SerializeField] private AudioSource _audiosource;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private TextMeshProUGUI txtVolume;
+
+    public void Set_Resolution()
+    {
+        switch (_resolution.value)
+        {
+            case 0:
+                Screen.SetResolution(1920, 1080, true);
+                break;
+            case 1:
+                Screen.SetResolution(640, 360, true);
+                break;
+        }
+    }
+
+    public void VolumeChange()
+    {
+        _audiosource.volume = _slider.value;
+        txtVolume.text = "Volume " + (_audiosource.volume*100).ToString("00") + "%";
+    }
+
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}
