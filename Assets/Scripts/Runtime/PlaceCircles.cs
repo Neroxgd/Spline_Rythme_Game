@@ -24,7 +24,7 @@ public class PlaceCircles : MonoBehaviour
             Vector3 _direction = (point - lastpoint).normalized;
             Quaternion _lookRotation = Quaternion.LookRotation(_direction);
             GameObject _torus = Instantiate(Torus, new Vector3(point.x, point.y, point.z), _lookRotation);
-            // List_Torus.Add(_torus);
+            List_Torus.Add(_torus);
         }
     }
 
