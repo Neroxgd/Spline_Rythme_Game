@@ -8,7 +8,7 @@ public class PlaceCircles : MonoBehaviour
     [SerializeField] private SplineBest _splinebest;
     [SerializeField] private uint sequence = 10;
     [SerializeField,Range(0,100)] private float _distanceBetweenObject = 1;
-    private List<GameObject> List_Torus = new List<GameObject>();
+    [SerializeField] List<GameObject> List_Torus = new List<GameObject>();
     private bool runtime = false;
     /*[SerializeField] private Transform Target;
     private Quaternion _lookRotation;
@@ -74,6 +74,14 @@ public class PlaceCircles : MonoBehaviour
     */
     public void PlaceCircleOnScene()
     {
+
+        foreach(GameObject T in List_Torus)
+        {
+            DestroyImmediate(T);
+
+        }
+            List_Torus.Clear();
+
           // runtime = true;
         // _splinebest.computeLengths();
         if (_splinebest == null)
@@ -89,6 +97,7 @@ public class PlaceCircles : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(_splinebest.transform.TransformDirection(orientation.forward), _splinebest.transform.TransformDirection(orientation.upward));
             GameObject _torus = Instantiate(Torus, position, rotation, this.transform);
+            List_Torus.Add(_torus);
         }
 
 
