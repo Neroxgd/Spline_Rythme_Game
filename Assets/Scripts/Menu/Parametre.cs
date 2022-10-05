@@ -11,7 +11,6 @@ public class Parametre : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI txtVolume;
     [SerializeField] private MainMenu _mainmenu;
-    [SerializeField] private StaticValues _staticValues;
 
     public void Set_Resolution()
     {
