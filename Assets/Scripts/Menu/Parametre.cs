@@ -11,6 +11,7 @@ public class Parametre : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI txtVolume;
     [SerializeField] private MainMenu _mainmenu;
+    [SerializeField] private StaticValues _staticValues;
 
     public void Set_Resolution()
     {
@@ -28,6 +29,7 @@ public class Parametre : MonoBehaviour
     public void VolumeChange()
     {
         _audiosource.volume = _slider.value;
+        PlayerPrefs.SetFloat("SliderVolumeLevel", _audiosource.volume);
         txtVolume.text = "Volume " + (_audiosource.volume*100).ToString("00") + "%";
     }
 
@@ -37,15 +39,11 @@ public class Parametre : MonoBehaviour
         _mainmenu.visibleParametre = !_mainmenu.visibleParametre;
         _mainmenu._canvasMainMenu.SetActive(true);
         _mainmenu._canvasParametre.SetActive(false);
-    }
+    } 
+
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _slider.value = _audiosource.volume;
+        txtVolume.text = "Volume " + (_audiosource.volume*100).ToString("00") + "%";
     }
 }

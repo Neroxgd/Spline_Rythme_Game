@@ -10,11 +10,13 @@ public class MainMenu : MonoBehaviour
     public GameObject _canvasParametre;
     public bool visibleMainMenu = true;
     public bool visibleParametre = false;
+    [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
         visibleMainMenu = true;
         visibleParametre = false;
+        audioSource.volume = PlayerPrefs.GetFloat("SliderVolumeLevel", audioSource.volume);
     }
 
     public void parametre()
@@ -34,4 +36,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
 }
