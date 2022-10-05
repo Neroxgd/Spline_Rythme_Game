@@ -8,12 +8,7 @@ public class CamTurn : MonoBehaviour
     [SerializeField][Range(1, 30)] private float zoomSpeed = 15;
     [SerializeField][Range(1, 10)] private float moveSpeed = 5;
     [SerializeField] private GameObject posCamOrigine;
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.LookAt(centreCam);
@@ -22,7 +17,6 @@ public class CamTurn : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
         if (Input.GetKey(KeyCode.LeftArrow))
             transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
-
     }
 
     void OnGUI()
