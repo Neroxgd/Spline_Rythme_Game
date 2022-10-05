@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class MainMenu : MonoBehaviour
         visibleParametre = !visibleParametre;
         _canvasParametre.SetActive(true);
         _canvasMainMenu.SetActive(false);
+    }
+
+    public void Voitures()
+    {
+          SceneManager.LoadScene("Garage");
     }
 
     public void Quitter()
