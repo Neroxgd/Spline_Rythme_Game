@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class VoitureSwitch : MonoBehaviour
 {
-    [SerializeField] GameObject voiturePourrite;
-    [SerializeField] GameObject Train;
-    private bool active = true;
+    [SerializeField] private List<GameObject> vehicule = new List<GameObject>();
+    private int _index = 0;
 
     public void SwitchCar()
     {
-        voiturePourrite.SetActive(!active);
-        Train.SetActive(active);
-        active = !active;
+        vehicule[_index].SetActive(false);
+        _index++;
+        if (_index >= vehicule.Count)
+            _index = 0;
+        vehicule[_index].SetActive(true);
     }
+
     void Start()
     {
 
