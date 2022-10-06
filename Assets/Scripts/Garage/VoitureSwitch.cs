@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class VoitureSwitch : MonoBehaviour
 {
     [SerializeField] private List<GameObject> vehicule = new List<GameObject>();
-    private int _index = 0;
+    private static int _index = 0;
 
     public void SwitchCar()
     {
@@ -15,11 +15,18 @@ public class VoitureSwitch : MonoBehaviour
         if (_index >= vehicule.Count)
             _index = 0;
         vehicule[_index].SetActive(true);
+        PlayerPrefs.SetInt("Voiture_index", _index);
     }
 
     void Start()
     {
-
+        for (int i = 0; i < vehicule.Count; i++)
+        {
+            if (i == _index)
+                vehicule[i].SetActive(true);
+            else
+                vehicule[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
