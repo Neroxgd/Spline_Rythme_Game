@@ -13,14 +13,16 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private List<GameObject> vehicule = new List<GameObject>();
     private int _indexV = 0;
+    private static bool firstStart = true;
 
     void Start()
     {
         visibleMainMenu = true;
         visibleParametre = false;
         audioSource.volume = PlayerPrefs.GetFloat("SliderVolumeLevel", audioSource.volume);
-        _indexV = PlayerPrefs.GetInt("Voiture_index", 0);
-        SetVoiture();
+        if (firstStart == false)
+            SetVoiture();
+        firstStart = false;
     }
 
     public void parametre()
@@ -45,7 +47,7 @@ public class MainMenu : MonoBehaviour
     {
         for (int i = 0; i < vehicule.Count; i++)
         {
-            if (i == _indexV)
+            if (i == PlayerPrefs.GetInt("Voiture_index"))
                 vehicule[i].SetActive(true);
             else
                 vehicule[i].SetActive(false);
