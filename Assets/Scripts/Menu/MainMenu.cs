@@ -38,6 +38,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Garage");
     }
 
+    public void Jouer()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void Quitter()
     {
         Application.Quit();
