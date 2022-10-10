@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Up
+  - Down
+  - Right
+  - Left
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Miss
   - Water
   - UI
   - Good
