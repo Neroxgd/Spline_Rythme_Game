@@ -21,7 +21,10 @@ public class MainMenu : MonoBehaviour
         visibleParametre = false;
         audioSource.volume = PlayerPrefs.GetFloat("SliderVolumeLevel", audioSource.volume);
         if (firstStart == false)
+        {
             SetVoiture();
+        }
+            
         firstStart = false;
     }
 

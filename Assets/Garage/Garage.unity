@@ -793,7 +793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Vitesse : 120%
+  m_text: 'Vitesse : 125%
 
 
     Score multiplieur : x2'
@@ -5501,7 +5501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Vitesse : 140%
+  m_text: 'Vitesse : 150%
 
 
     Score multiplieur : x3'
