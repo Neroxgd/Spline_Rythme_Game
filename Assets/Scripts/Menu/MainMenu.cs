@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public bool visibleMainMenu = true;
     public bool visibleParametre = false;
     [SerializeField] private AudioSource audioSource;
+    public AudioSource audioSourceButton;
     [SerializeField] private List<GameObject> vehicule = new List<GameObject>();
     private int _indexV = 0;
     private static bool firstStart = true;
@@ -34,15 +35,18 @@ public class MainMenu : MonoBehaviour
         visibleParametre = !visibleParametre;
         _canvasParametre.SetActive(true);
         _canvasMainMenu.SetActive(false);
+        audioSourceButton.Play();
     }
 
     public void Voitures()
     {
+        audioSource.Play();
         SceneManager.LoadScene("Garage");
     }
 
     public void Jouer()
     {
+        audioSource.Play();
         SceneManager.LoadScene(1);
     }
 

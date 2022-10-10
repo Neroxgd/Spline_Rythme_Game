@@ -38,6 +38,7 @@ public class Parametre : MonoBehaviour
         _mainmenu.visibleParametre = !_mainmenu.visibleParametre;
         _mainmenu._canvasMainMenu.SetActive(true);
         _mainmenu._canvasParametre.SetActive(false);
+        _mainmenu.audioSourceButton.Play();
     } 
 
     void Start()

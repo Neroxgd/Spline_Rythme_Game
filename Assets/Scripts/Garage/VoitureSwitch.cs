@@ -7,6 +7,7 @@ public class VoitureSwitch : MonoBehaviour
 {
     [SerializeField] private List<GameObject> vehicule = new List<GameObject>();
     private static int _index = 0;
+    [SerializeField] private AudioSource audioSource;
 
     public void SwitchCar()
     {
@@ -16,6 +17,7 @@ public class VoitureSwitch : MonoBehaviour
             _index = 0;
         vehicule[_index].SetActive(true);
         PlayerPrefs.SetInt("Voiture_index", _index);
+        audioSource.Play();
     }
 
     void Start()
