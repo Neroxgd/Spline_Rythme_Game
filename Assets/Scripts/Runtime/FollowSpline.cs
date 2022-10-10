@@ -8,6 +8,8 @@ public class FollowSpline : MonoBehaviour
     private float distance = 0;
     [Range(0, 30)] public float speed = 1;
     private static float _indexVoiture = 0;
+    private static int multiplicateur_de_combo = 1;
+    public int Return_Multipicateur_de_combo() { return multiplicateur_de_combo; }
     [SerializeField] private AudioSource _audiosource;
 
     public Vector3 offset = Vector3.zero;
@@ -20,18 +22,21 @@ public class FollowSpline : MonoBehaviour
         {
             _indexVoiture = 1f;
             _audiosource.pitch = 1f;
+            multiplicateur_de_combo = 1;
         }
 
         if (PlayerPrefs.GetInt("Voiture_index") == 1)
         {
             _indexVoiture = 1.25f;
             _audiosource.pitch = 1.25f;
+            multiplicateur_de_combo = 2;
         }
 
         if (PlayerPrefs.GetInt("Voiture_index") == 2)
         {
             _indexVoiture = 1.5f;
             _audiosource.pitch = 1.5f;
+            multiplicateur_de_combo = 3;
         }
 
     }
